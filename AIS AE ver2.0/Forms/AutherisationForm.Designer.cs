@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.AutherisationGroupBox = new System.Windows.Forms.GroupBox();
+            this.DecanatInfoLabel = new System.Windows.Forms.Label();
             this.LoginButton = new System.Windows.Forms.Button();
             this.PasswordTestBox = new System.Windows.Forms.TextBox();
             this.LoginTextBox = new System.Windows.Forms.TextBox();
@@ -36,7 +37,6 @@
             this.LoginLabel = new System.Windows.Forms.Label();
             this.HelloLabel2 = new System.Windows.Forms.Label();
             this.HelloLabel = new System.Windows.Forms.Label();
-            this.DecanatInfoLabel = new System.Windows.Forms.Label();
             this.AutherisationGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +56,17 @@
             this.AutherisationGroupBox.TabIndex = 0;
             this.AutherisationGroupBox.TabStop = false;
             this.AutherisationGroupBox.Text = "Вхід";
+            // 
+            // DecanatInfoLabel
+            // 
+            this.DecanatInfoLabel.AutoSize = true;
+            this.DecanatInfoLabel.ForeColor = System.Drawing.Color.Red;
+            this.DecanatInfoLabel.Location = new System.Drawing.Point(6, 264);
+            this.DecanatInfoLabel.Name = "DecanatInfoLabel";
+            this.DecanatInfoLabel.Size = new System.Drawing.Size(553, 16);
+            this.DecanatInfoLabel.TabIndex = 7;
+            this.DecanatInfoLabel.Text = " Увага!  Якщо ви не можете зайти чи не маєте облікового запису - пишіть у деканат" +
+    "!";
             // 
             // LoginButton
             // 
@@ -116,17 +127,6 @@
             this.HelloLabel.Size = new System.Drawing.Size(279, 16);
             this.HelloLabel.TabIndex = 0;
             this.HelloLabel.Text = "Вас вітає система \"Електронний журнал\"";
-            // 
-            // DecanatInfoLabel
-            // 
-            this.DecanatInfoLabel.AutoSize = true;
-            this.DecanatInfoLabel.ForeColor = System.Drawing.Color.Red;
-            this.DecanatInfoLabel.Location = new System.Drawing.Point(6, 265);
-            this.DecanatInfoLabel.Name = "DecanatInfoLabel";
-            this.DecanatInfoLabel.Size = new System.Drawing.Size(553, 16);
-            this.DecanatInfoLabel.TabIndex = 7;
-            this.DecanatInfoLabel.Text = " Увага!  Якщо ви не можете зайти чи не маєте облікового запису - пишіть у деканат" +
-    "!";
             // 
             // AutherisationForm
             // 
