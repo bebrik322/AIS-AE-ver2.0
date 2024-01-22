@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentForm));
             this.StudentTabs = new System.Windows.Forms.TabControl();
             this.JournalTab = new System.Windows.Forms.TabPage();
+            this.StudentPrintButton = new System.Windows.Forms.Button();
             this.StudentSaveButton = new System.Windows.Forms.Button();
             this.StudentNameOutput = new System.Windows.Forms.Label();
             this.HelloStudentLabel = new System.Windows.Forms.Label();
@@ -78,8 +79,9 @@
             this.BackButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.StudentPrintButton = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.StudentAVGGradeButton = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.StudentTabs.SuspendLayout();
             this.JournalTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.JournalGridView)).BeginInit();
@@ -109,6 +111,8 @@
             // 
             // JournalTab
             // 
+            this.JournalTab.Controls.Add(this.label1);
+            this.JournalTab.Controls.Add(this.StudentAVGGradeButton);
             this.JournalTab.Controls.Add(this.StudentPrintButton);
             this.JournalTab.Controls.Add(this.StudentSaveButton);
             this.JournalTab.Controls.Add(this.StudentNameOutput);
@@ -123,6 +127,16 @@
             this.JournalTab.TabIndex = 0;
             this.JournalTab.Text = "Журнал";
             this.JournalTab.UseVisualStyleBackColor = true;
+            // 
+            // StudentPrintButton
+            // 
+            this.StudentPrintButton.Location = new System.Drawing.Point(670, 334);
+            this.StudentPrintButton.Name = "StudentPrintButton";
+            this.StudentPrintButton.Size = new System.Drawing.Size(92, 23);
+            this.StudentPrintButton.TabIndex = 6;
+            this.StudentPrintButton.Text = "Друк";
+            this.StudentPrintButton.UseVisualStyleBackColor = true;
+            this.StudentPrintButton.Click += new System.EventHandler(this.StudentPrintButton_Click);
             // 
             // StudentSaveButton
             // 
@@ -597,19 +611,27 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
-            // StudentPrintButton
-            // 
-            this.StudentPrintButton.Location = new System.Drawing.Point(670, 334);
-            this.StudentPrintButton.Name = "StudentPrintButton";
-            this.StudentPrintButton.Size = new System.Drawing.Size(92, 23);
-            this.StudentPrintButton.TabIndex = 6;
-            this.StudentPrintButton.Text = "Друк";
-            this.StudentPrintButton.UseVisualStyleBackColor = true;
-            this.StudentPrintButton.Click += new System.EventHandler(this.StudentPrintButton_Click);
-            // 
             // printDocument1
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // StudentAVGGradeButton
+            // 
+            this.StudentAVGGradeButton.AutoSize = true;
+            this.StudentAVGGradeButton.Location = new System.Drawing.Point(564, 308);
+            this.StudentAVGGradeButton.Name = "StudentAVGGradeButton";
+            this.StudentAVGGradeButton.Size = new System.Drawing.Size(100, 16);
+            this.StudentAVGGradeButton.TabIndex = 7;
+            this.StudentAVGGradeButton.Text = "Не визначено";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(461, 308);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(97, 16);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Середній бал:";
             // 
             // StudentForm
             // 
@@ -697,5 +719,7 @@
         private System.Windows.Forms.Button StudentPrintButton;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label StudentAVGGradeButton;
     }
 }

@@ -1208,6 +1208,102 @@ namespace AIS_AE_ver2._0
             // Авторазмер колонок
             worksheet.Columns.AutoFit();
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Вибір файлу Excel для імпорту
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "Excel Files|*.xls;*.xlsx;*.xlsm"
+            };
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string path = openFileDialog.FileName;
+
+                // Ініціалізація Excel
+                Excel.Application app = new Excel.Application();
+                Excel.Workbook workbook = app.Workbooks.Open(path);
+                Excel._Worksheet worksheet = workbook.Sheets[1];
+                Excel.Range range = worksheet.UsedRange;
+
+                int rows = range.Rows.Count;
+                int cols = range.Columns.Count;
+
+                // Читання даних з Excel
+                for (int i = 2; i <= rows; i++) // Починаємо з другого рядка, оскільки перший - заголовки
+                {
+                    string userID = range.Cells[i, 1].Value2.ToString();
+                    string username = range.Cells[i, 2].Value2.ToString();
+                    string password = range.Cells[i, 3].Value2.ToString();
+                    string role = range.Cells[i, 4].Value2.ToString();
+                    string studentID = range.Cells[i, 5].Value2 != null ? range.Cells[i, 5].Value2.ToString() : null;
+                    string teacherID = range.Cells[i, 6].Value2 != null ? range.Cells[i, 6].Value2.ToString() : null;
+
+                    // Тут додаємо перевірку та збереження даних у базу
+                    UpdateDatabase(userID, username, password, role, studentID, teacherID);
+                }
+
+                // Закриття Excel
+                workbook.Close(false);
+                app.Quit();
+            }
+            LoadUsersData();
+        }
+        private void UpdateDatabase(string userID, string username, string password, string role, string studentID, string teacherID)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Перевірка чи користувач існує вже за ідентифікатором userID
+                    string checkUserQuery = "SELECT COUNT(*) FROM Users WHERE UserID = @UserID";
+                    using (SqlCommand checkUserCommand = new SqlCommand(checkUserQuery, connection))
+                    {
+                        checkUserCommand.Parameters.AddWithValue("@UserID", userID);
+                        int userCount = (int)checkUserCommand.ExecuteScalar();
+
+                        if (userCount > 0)
+                        {
+                            // Якщо користувач існує, виконуємо оновлення
+                            string updateQuery = "UPDATE Users SET Username = @Username, Pasword = @Pasword, Role = @Role, StudentID = @StudentID, TeacherID = @TeacherID WHERE UserID = @UserID";
+                            using (SqlCommand updateCommand = new SqlCommand(updateQuery, connection))
+                            {
+                                updateCommand.Parameters.AddWithValue("@UserID", userID);
+                                updateCommand.Parameters.AddWithValue("@Username", username);
+                                updateCommand.Parameters.AddWithValue("@Pasword", password);
+                                updateCommand.Parameters.AddWithValue("@Role", role);
+                                updateCommand.Parameters.AddWithValue("@StudentID", (object)studentID ?? DBNull.Value);
+                                updateCommand.Parameters.AddWithValue("@TeacherID", (object)teacherID ?? DBNull.Value);
+
+                                updateCommand.ExecuteNonQuery();
+                            }
+                        }
+                        else
+                        {
+                            // Якщо користувача немає, виконуємо додавання
+                            string insertQuery = "INSERT INTO Users (UserID, Username, Pasword, Role, StudentID, TeacherID) VALUES (@UserID, @Username, @Pasword, @Role, @StudentID, @TeacherID)";
+                            using (SqlCommand insertCommand = new SqlCommand(insertQuery, connection))
+                            {
+                                insertCommand.Parameters.AddWithValue("@UserID", userID);
+                                insertCommand.Parameters.AddWithValue("@Username", username);
+                                insertCommand.Parameters.AddWithValue("@Pasword", password);
+                                insertCommand.Parameters.AddWithValue("@Role", role);
+                                insertCommand.Parameters.AddWithValue("@StudentID", (object)studentID ?? DBNull.Value);
+                                insertCommand.Parameters.AddWithValue("@TeacherID", (object)teacherID ?? DBNull.Value);
+
+                                insertCommand.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Помилка оновлення бази даних: " + ex.Message);
+                }
+            }
+        }
     }
     public class TeacherItem
     {

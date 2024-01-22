@@ -37,11 +37,13 @@
             this.LoginLabel = new System.Windows.Forms.Label();
             this.HelloLabel2 = new System.Windows.Forms.Label();
             this.HelloLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.AutherisationGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // AutherisationGroupBox
             // 
+            this.AutherisationGroupBox.Controls.Add(this.label1);
             this.AutherisationGroupBox.Controls.Add(this.DecanatInfoLabel);
             this.AutherisationGroupBox.Controls.Add(this.LoginButton);
             this.AutherisationGroupBox.Controls.Add(this.PasswordTestBox);
@@ -70,9 +72,10 @@
             // 
             // LoginButton
             // 
-            this.LoginButton.Location = new System.Drawing.Point(111, 218);
+            this.LoginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.LoginButton.Location = new System.Drawing.Point(115, 195);
             this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(349, 23);
+            this.LoginButton.Size = new System.Drawing.Size(349, 37);
             this.LoginButton.TabIndex = 6;
             this.LoginButton.Text = "Вхід";
             this.LoginButton.UseVisualStyleBackColor = true;
@@ -80,14 +83,14 @@
             // 
             // PasswordTestBox
             // 
-            this.PasswordTestBox.Location = new System.Drawing.Point(151, 179);
+            this.PasswordTestBox.Location = new System.Drawing.Point(169, 155);
             this.PasswordTestBox.Name = "PasswordTestBox";
             this.PasswordTestBox.Size = new System.Drawing.Size(276, 22);
             this.PasswordTestBox.TabIndex = 5;
             // 
             // LoginTextBox
             // 
-            this.LoginTextBox.Location = new System.Drawing.Point(151, 140);
+            this.LoginTextBox.Location = new System.Drawing.Point(169, 116);
             this.LoginTextBox.Name = "LoginTextBox";
             this.LoginTextBox.Size = new System.Drawing.Size(276, 22);
             this.LoginTextBox.TabIndex = 4;
@@ -95,7 +98,7 @@
             // PasswordLabel
             // 
             this.PasswordLabel.AutoSize = true;
-            this.PasswordLabel.Location = new System.Drawing.Point(71, 179);
+            this.PasswordLabel.Location = new System.Drawing.Point(89, 155);
             this.PasswordLabel.Name = "PasswordLabel";
             this.PasswordLabel.Size = new System.Drawing.Size(59, 16);
             this.PasswordLabel.TabIndex = 3;
@@ -104,7 +107,7 @@
             // LoginLabel
             // 
             this.LoginLabel.AutoSize = true;
-            this.LoginLabel.Location = new System.Drawing.Point(71, 140);
+            this.LoginLabel.Location = new System.Drawing.Point(89, 116);
             this.LoginLabel.Name = "LoginLabel";
             this.LoginLabel.Size = new System.Drawing.Size(44, 16);
             this.LoginLabel.TabIndex = 2;
@@ -113,20 +116,32 @@
             // HelloLabel2
             // 
             this.HelloLabel2.AutoSize = true;
-            this.HelloLabel2.Location = new System.Drawing.Point(221, 73);
+            this.HelloLabel2.Font = new System.Drawing.Font("Segoe UI Historic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HelloLabel2.Location = new System.Drawing.Point(188, 58);
             this.HelloLabel2.Name = "HelloLabel2";
-            this.HelloLabel2.Size = new System.Drawing.Size(131, 16);
+            this.HelloLabel2.Size = new System.Drawing.Size(174, 23);
             this.HelloLabel2.TabIndex = 1;
             this.HelloLabel2.Text = "Увійдіть в систему!";
             // 
             // HelloLabel
             // 
             this.HelloLabel.AutoSize = true;
-            this.HelloLabel.Location = new System.Drawing.Point(148, 43);
+            this.HelloLabel.Font = new System.Drawing.Font("Segoe UI Emoji", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HelloLabel.Location = new System.Drawing.Point(41, 27);
             this.HelloLabel.Name = "HelloLabel";
-            this.HelloLabel.Size = new System.Drawing.Size(279, 16);
+            this.HelloLabel.Size = new System.Drawing.Size(529, 31);
             this.HelloLabel.TabIndex = 0;
-            this.HelloLabel.Text = "Вас вітає система \"Електронний журнал\"";
+            this.HelloLabel.Text = "Вас вітає система \"Електронний журнал\"!";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label1.Location = new System.Drawing.Point(210, 235);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(167, 16);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Авторизація через \"ДіЯ\"";
             // 
             // AutherisationForm
             // 
@@ -154,6 +169,7 @@
         private System.Windows.Forms.Label LoginLabel;
         private System.Windows.Forms.Label HelloLabel2;
         private System.Windows.Forms.Label DecanatInfoLabel;
+        private System.Windows.Forms.Label label1;
     }
 }
 

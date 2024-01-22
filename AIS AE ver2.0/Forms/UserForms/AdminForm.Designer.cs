@@ -180,6 +180,7 @@
             this.RoleColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StudentIDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TeacherIDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.TeacherTabControl.SuspendLayout();
             this.TeacherSheduleTab.SuspendLayout();
             this.TeacherScheduleTabControl.SuspendLayout();
@@ -1674,9 +1675,9 @@
             // AdminStatsGridPrintButton
             // 
             this.AdminStatsGridPrintButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AdminStatsGridPrintButton.Location = new System.Drawing.Point(276, 21);
+            this.AdminStatsGridPrintButton.Location = new System.Drawing.Point(375, 21);
             this.AdminStatsGridPrintButton.Name = "AdminStatsGridPrintButton";
-            this.AdminStatsGridPrintButton.Size = new System.Drawing.Size(245, 36);
+            this.AdminStatsGridPrintButton.Size = new System.Drawing.Size(197, 36);
             this.AdminStatsGridPrintButton.TabIndex = 3;
             this.AdminStatsGridPrintButton.Text = "Роздрукувати";
             this.AdminStatsGridPrintButton.UseVisualStyleBackColor = true;
@@ -1687,7 +1688,7 @@
             this.AdminStatsGridSaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.AdminStatsGridSaveButton.Location = new System.Drawing.Point(6, 21);
             this.AdminStatsGridSaveButton.Name = "AdminStatsGridSaveButton";
-            this.AdminStatsGridSaveButton.Size = new System.Drawing.Size(264, 36);
+            this.AdminStatsGridSaveButton.Size = new System.Drawing.Size(176, 36);
             this.AdminStatsGridSaveButton.TabIndex = 4;
             this.AdminStatsGridSaveButton.Text = "Зберегти";
             this.AdminStatsGridSaveButton.UseVisualStyleBackColor = true;
@@ -1696,9 +1697,9 @@
             // AdminStatsGridDeleteButton
             // 
             this.AdminStatsGridDeleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AdminStatsGridDeleteButton.Location = new System.Drawing.Point(527, 21);
+            this.AdminStatsGridDeleteButton.Location = new System.Drawing.Point(578, 21);
             this.AdminStatsGridDeleteButton.Name = "AdminStatsGridDeleteButton";
-            this.AdminStatsGridDeleteButton.Size = new System.Drawing.Size(243, 36);
+            this.AdminStatsGridDeleteButton.Size = new System.Drawing.Size(192, 36);
             this.AdminStatsGridDeleteButton.TabIndex = 5;
             this.AdminStatsGridDeleteButton.Text = "Видалити";
             this.AdminStatsGridDeleteButton.UseVisualStyleBackColor = true;
@@ -1706,6 +1707,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.AdminStatsGridSaveButton);
             this.groupBox1.Controls.Add(this.AdminStatsGridDeleteButton);
             this.groupBox1.Controls.Add(this.AdminStatsGridPrintButton);
@@ -1761,6 +1763,17 @@
             this.TeacherIDColumn.Name = "TeacherIDColumn";
             this.TeacherIDColumn.ReadOnly = true;
             this.TeacherIDColumn.Width = 70;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(188, 21);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(181, 36);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Завантажити";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AdminForm
             // 
@@ -1980,5 +1993,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn RoleColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentIDColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn TeacherIDColumn;
+        private System.Windows.Forms.Button button1;
     }
 }

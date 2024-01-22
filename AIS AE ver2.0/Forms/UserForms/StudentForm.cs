@@ -34,6 +34,7 @@ namespace AIS_AE_ver2._0
             GradesInfoOutputLabel.Text = GetStudentSubjects(studentId);
             //Заповнення журналу
             GridFill(studentId);
+            StudentAVGGradeButton.Text = GetAverageGradeForStudent(studentId).ToString();
             //заповнення комбобоксу для групп группами
             FillClassesComboBox();
         }
@@ -230,7 +231,41 @@ namespace AIS_AE_ver2._0
 
 
 
+        private double GetAverageGradeForStudent(int studentId)
+        {
+            double averageGrade = 0.0;
+            int totalGrades = 0;
 
+            string query = "SELECT Grade FROM Grades WHERE StudentID = @StudentID";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@StudentID", studentId);
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            if (double.TryParse(reader["Grade"].ToString(), out double grade))
+                            {
+                                averageGrade += grade;
+                                totalGrades++;
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (totalGrades > 0)
+            {
+                averageGrade /= totalGrades;
+            }
+
+            return averageGrade;
+        }
         private void FillClassesComboBox()
         {
             string query = "SELECT ClassID, ClassName FROM Classes;";
