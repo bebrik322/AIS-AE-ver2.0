@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.AutherisationGroupBox = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.DecanatInfoLabel = new System.Windows.Forms.Label();
             this.LoginButton = new System.Windows.Forms.Button();
             this.PasswordTestBox = new System.Windows.Forms.TextBox();
@@ -37,7 +38,6 @@
             this.LoginLabel = new System.Windows.Forms.Label();
             this.HelloLabel2 = new System.Windows.Forms.Label();
             this.HelloLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.AutherisationGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +58,17 @@
             this.AutherisationGroupBox.TabIndex = 0;
             this.AutherisationGroupBox.TabStop = false;
             this.AutherisationGroupBox.Text = "Вхід";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label1.Location = new System.Drawing.Point(210, 235);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(167, 16);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Авторизація через \"ДіЯ\"";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // DecanatInfoLabel
             // 
@@ -132,16 +143,6 @@
             this.HelloLabel.Size = new System.Drawing.Size(529, 31);
             this.HelloLabel.TabIndex = 0;
             this.HelloLabel.Text = "Вас вітає система \"Електронний журнал\"!";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label1.Location = new System.Drawing.Point(210, 235);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 16);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Авторизація через \"ДіЯ\"";
             // 
             // AutherisationForm
             // 

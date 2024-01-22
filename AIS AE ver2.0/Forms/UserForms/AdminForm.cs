@@ -1304,6 +1304,11 @@ namespace AIS_AE_ver2._0
                 }
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Coming soon...");
+        }
     }
     public class TeacherItem
     {

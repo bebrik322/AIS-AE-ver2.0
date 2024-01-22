@@ -84,6 +84,7 @@
             this.TeacherInfoOutput = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.button1 = new System.Windows.Forms.Button();
             this.TeacherTabControl.SuspendLayout();
             this.TeacherSheduleTab.SuspendLayout();
             this.TeacherScheduleTabControl.SuspendLayout();
@@ -460,6 +461,7 @@
             // 
             // Grades
             // 
+            this.Grades.Controls.Add(this.button1);
             this.Grades.Controls.Add(this.TeacherUserInputTextBox);
             this.Grades.Controls.Add(this.TeacherGradeLabel);
             this.Grades.Controls.Add(this.TeacherSubjectComboBox);
@@ -655,6 +657,17 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
+            // button1
+            // 
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button1.Location = new System.Drawing.Point(619, 357);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(165, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Завантажити з файлу";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // TeacherForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -749,5 +762,6 @@
         private System.Windows.Forms.Label TeacherGradeLabel;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.Button button1;
     }
 }

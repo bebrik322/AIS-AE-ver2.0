@@ -216,5 +216,9 @@ namespace AIS_AE_ver2._0
                 }
             }
         }
+        private void label1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Coming soon...");
+        }
     }
 }

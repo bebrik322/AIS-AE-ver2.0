@@ -181,6 +181,7 @@
             this.StudentIDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TeacherIDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.TeacherTabControl.SuspendLayout();
             this.TeacherSheduleTab.SuspendLayout();
             this.TeacherScheduleTabControl.SuspendLayout();
@@ -562,6 +563,7 @@
             // 
             // Grades
             // 
+            this.Grades.Controls.Add(this.button2);
             this.Grades.Controls.Add(this.TeacherUserInputTextBox);
             this.Grades.Controls.Add(this.TeacherGradeLabel);
             this.Grades.Controls.Add(this.TeacherSubjectComboBox);
@@ -1775,6 +1777,17 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button2.Location = new System.Drawing.Point(619, 357);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(165, 23);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Завантажити з файлу";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1994,5 +2007,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentIDColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn TeacherIDColumn;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

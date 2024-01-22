@@ -615,6 +615,11 @@ namespace AIS_AE_ver2._0
             // Авторазмер колонок
             worksheet.Columns.AutoFit();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Coming soon...");
+        }
     }
     public class StudentItem
     {
